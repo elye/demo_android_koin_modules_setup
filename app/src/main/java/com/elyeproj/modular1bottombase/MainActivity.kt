@@ -13,7 +13,7 @@ import org.koin.java.KoinJavaComponent.inject
 
 class MainActivity : AppCompatActivity() {
 
-    private val appDependent by inject(AppDependent::class.java) { parametersOf("first") }
+    private val appDependent by inject(AppDependent::class.java) { parametersOf("first", "second") }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
