@@ -8,11 +8,12 @@ import com.elyeproj.featuretwo.FeatureTwoActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.core.context.loadKoinModules
 import org.koin.core.context.unloadKoinModules
+import org.koin.core.parameter.parametersOf
 import org.koin.java.KoinJavaComponent.inject
 
 class MainActivity : AppCompatActivity() {
 
-    private val appDependent by inject(AppDependent::class.java)
+    private val appDependent by inject(AppDependent::class.java) { parametersOf("first") }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
