@@ -28,5 +28,5 @@ task clean(type: Delete) {
 }
 
 ext {
-    koinVersion = '2.0.1'
+    koinVersion = '2.1.5'
 }
