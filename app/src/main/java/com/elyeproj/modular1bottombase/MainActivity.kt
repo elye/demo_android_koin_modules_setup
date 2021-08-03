@@ -2,18 +2,18 @@ package com.elyeproj.modular1bottombase
 
 import android.content.Intent
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.elyeproj.featureone.FeatureOneActivity
 import com.elyeproj.featuretwo.FeatureTwoActivity
 import kotlinx.android.synthetic.main.activity_main.*
+import org.koin.android.ext.android.inject
 import org.koin.core.context.loadKoinModules
 import org.koin.core.context.unloadKoinModules
 import org.koin.core.parameter.parametersOf
-import org.koin.java.KoinJavaComponent.inject
 
 class MainActivity : AppCompatActivity() {
 
-    private val appDependent by inject(AppDependent::class.java) { parametersOf("first", "second") }
+    private val appDependent by inject<AppDependent> { parametersOf("first", "second") }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

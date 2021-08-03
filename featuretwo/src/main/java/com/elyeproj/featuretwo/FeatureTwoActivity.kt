@@ -1,15 +1,15 @@
 package com.elyeproj.featuretwo
 
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_feature_two.*
+import org.koin.android.ext.android.inject
 import org.koin.core.context.loadKoinModules
 import org.koin.core.context.unloadKoinModules
-import org.koin.java.KoinJavaComponent
 
 class FeatureTwoActivity : AppCompatActivity() {
 
-    private val featureTwoDependent by KoinJavaComponent.inject(FeatureTwoDependent::class.java)
+    private val featureTwoDependent by inject<FeatureTwoDependent>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
